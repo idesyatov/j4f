@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 
 {
+  ## DISK CONFIGURATION
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -13,24 +14,25 @@
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
-  # boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  #boot.initrd.luks.devices = [
+  #  {
+  #    name = "luksroot";
+  #    device = "/dev/sda2";
+  #  }
+  #];
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
+  ## NETWORK
+
+  # Define your hostname
+  networking.hostName = "nixos"; # Define your hostname.
+
   networking.useDHCP = false;
   networking.interfaces.enp0s3.useDHCP = true;
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  ## LOCALIZATION
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -45,43 +47,33 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
+    # utils
     vim
+    git
+    htop
+    tldr
+    tmux
+    tree
+    wget
+    ranger
     chromium
+    networkmanagerapplet
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  #   pinentryFlavor = "gnome3";
-  # };
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
+  ## SERVICES
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  ## XSERVER
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e";
-
   services.xserver = {
     enable = true;
     layout = "us";
@@ -97,10 +89,10 @@
     windowManager.i3 = {
         enable = true;
         extraPackages = with pkgs; [
-            dmenu 
-            i3status 
-            i3lock 
-            i3blocks 
+            dmenu
+            i3status
+            i3lock
+            i3blocks
         ];
     };
   };
@@ -108,11 +100,35 @@
   # Enable touchpad support.
   # services.xserver.libinput.enable = true;
 
+  fonts = {
+    enableFontDir = true;
+    enableGhostscriptFonts = true;
+    fonts = with pkgs; [
+        anonymousPro
+        #corefonts # Microsoft's fonts (unfree)
+        dejavu_fonts
+        noto-fonts
+        freefont_ttf
+        google-fonts
+        inconsolata
+        liberation_ttf
+        powerline-fonts
+        source-code-pro
+        terminus_font
+        ttf_bitstream_vera
+        ubuntu_font_family
+    ];
+  };
+
+  ## USERS
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.morph = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
+
+  ## NIXOS
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
