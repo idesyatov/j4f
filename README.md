@@ -34,6 +34,8 @@
 
 ## After install
 
-Initial password for `user` is `configuration.nix`.
+Login as `root` with the password specified during installation
+
+Set passwd for `username` from configuration.nix.
 
     sudo nix-channel --add https://nixos.org/channels/nixos-unstable unstable
