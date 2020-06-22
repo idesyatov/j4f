@@ -17,6 +17,7 @@ in {
     wget
     ranger
     chromium
+    #networkmanager
     networkmanagerapplet
   ];
 

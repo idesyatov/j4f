@@ -1,6 +1,4 @@
-# let's get a party started
-
-## reproducible localhost
+# Reproducible localhost
 
 [Download NixOS installation ISO](https://nixos.org/nixos/download.html)
 
@@ -36,6 +34,6 @@
 
 Login as `root` with the password specified during installation
 
-Set passwd for `username` from configuration.nix.
+Set passwd for `user` from configuration.nix.
 
     sudo nix-channel --add https://nixos.org/channels/nixos-unstable unstable

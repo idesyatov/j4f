@@ -1,7 +1,13 @@
-# Nixos configuration
+# nix-channel --add https://nixos.org/channels/nixos-20.03 nixos
+# nix-channel --add https://nixos.org/channels/nixos-unstable unstable
+# nix-channel --update
+
+
 { config, pkgs, ... }:
 
-{
+let
+  unstable = import <unstable> {};
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -21,6 +27,7 @@
   ## NETWORK
   networking.hostName = "nixos"; # Define your hostname.
   networking.useDHCP = false;
+  networking.networkmanager.enable = true;
   networking.interfaces.enp0s3.useDHCP = true;
 
   # Enable the OpenSSH daemon.
