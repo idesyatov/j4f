@@ -16,8 +16,9 @@ in {
     tree
     wget
     ranger
+    clipmenu
     chromium
-    #networkmanager
+    rxvt_unicode
     networkmanagerapplet
   ];
 
