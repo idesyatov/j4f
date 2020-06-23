@@ -68,9 +68,8 @@ in {
       enable = true;
       extraPackages = with pkgs; [
         dmenu
-        i3status
-        i3lock
-        i3blocks
+        networkmanagerapplet
+        i3status i3lock i3blocks
       ];
     };
   };
