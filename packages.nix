@@ -3,18 +3,29 @@
 
 let
   nonfree = import <nixos> { config.allowUnfree = true; };
+  unstable = import <unstable> {};
+  unstable-nonfree = import <unstable> { config.allowUnfree = true; };
 in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim git htop tmux wget 
-    tldr tree ranger 
-
-    rxvt_unicode
+    
+    # Utils
+    vim git htop tmux wget tldr
+    rxvt_unicode tree ranger 
+        
     # bindsym $mod+c exec "CM_ONESHOT=1 clipmenud"
     # bindsym $mod+v exec clipmenu
     clipmenu
-    chromium
+
+    # X apps
+    # chromium
+    (writeShellScriptBin "chromium" ''
+      ${unstable.chromium}/bin/chromium \
+      --force-dark-mode \
+      --start-maximized \
+      $@
+    '')
   ];
 
   nixpkgs.config = {
