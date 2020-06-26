@@ -74,6 +74,7 @@ in {
         networkmanagerapplet
         i3status i3lock i3blocks
       ];
+      configFile = "./configs/i3.conf";
     };
   };
 
