@@ -95,7 +95,7 @@
           };
         };
         startup = [
-          {command = "${pkgs.feh}/bin/feh --bg-fill /etc/nixos/.background-image wallpaper.png"; always = true;}
+          {command = "${pkgs.feh}/bin/feh --bg-fill /etc/nixos/configs/wallpaper.jpg"; always = true;}
         ];
         terminal = "rxvt";
         modifier = "Mod4";

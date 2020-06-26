@@ -28,7 +28,7 @@ in {
   networking = {
     useDHCP = false;
     interfaces.enp0s3 = {
-      useDHCP = false;
+      useDHCP = true;
     };
     hostName = "nixos"; # Define your hostname.
   };
