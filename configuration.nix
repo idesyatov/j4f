@@ -25,10 +25,13 @@ in {
   };
 
   ## NETWORK
-  networking.hostName = "nixos"; # Define your hostname.
-  networking.useDHCP = false;
-  networking.networkmanager.enable = true;
-  networking.interfaces.enp0s3.useDHCP = true;
+  networking = {
+    useDHCP = false;
+    interfaces.enp0s3 = {
+      useDHCP = false;
+    };
+    hostName = "nixos"; # Define your hostname.
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

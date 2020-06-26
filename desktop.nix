@@ -4,10 +4,17 @@
 let
   nonfree = import <nixos> { config.allowUnfree = true; };  
 in {
+  imports = 
+    [
+      ./configs/i3.nix
+    ];  
+
+  environment.pathsToLink = [ "/libexec" ];
+
   # Enable the X11 windowing system with i3wm 
   services.xserver = {
     enable = true;
-    layout = "us";
+    layout = "us,ru";
 
     desktopManager = {
       xterm.enable = false;
@@ -70,26 +77,23 @@ in {
         dmenu
         networkmanagerapplet
         i3status i3lock i3blocks
+        
+        compton
       ];
     };
   };
-  
+
   fonts = {
     enableFontDir = true;
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
-        anonymousPro
-        dejavu_fonts
-        noto-fonts
-        freefont_ttf
-        google-fonts
-        inconsolata
-        liberation_ttf
-        powerline-fonts
-        source-code-pro
-        terminus_font
-        ttf_bitstream_vera
         ubuntu_font_family
+        noto-fonts-emoji
+        cantarell_fonts
+        cm_unicode
+        google-fonts
+        go-font
+        cm_unicode
 
         nonfree.corefonts
     ];
