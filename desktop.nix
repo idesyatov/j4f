@@ -1,5 +1,5 @@
 # Desktop env
-{ config, pkgs, ...}:
+{ lib, config, pkgs, ...}:
 
 let
   nonfree = import <nixos> { config.allowUnfree = true; };  
@@ -76,6 +76,7 @@ in {
       ];
     };
   };
+  windowManager.i3.configFile = import ./i3config.nix { inherit config; inherit pkgs; };
 
   fonts = {
     enableFontDir = true;

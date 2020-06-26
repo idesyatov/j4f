@@ -27,6 +27,7 @@ in {
   ## NETWORK
   networking = {
     useDHCP = false;
+    networkmanager.enable = true;
     interfaces.enp0s3 = {
       useDHCP = true;
     };
