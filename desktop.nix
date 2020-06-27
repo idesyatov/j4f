@@ -5,6 +5,8 @@ let
   nonfree = import <nixos> { config.allowUnfree = true; };  
 in {
   environment.pathsToLink = [ "/libexec" ];
+  
+  programs.nm-applet.enable = true;
 
   # Enable the X11 windowing system with i3wm 
   services.xserver = {
@@ -74,9 +76,9 @@ in {
         networkmanagerapplet
         i3status i3lock i3blocks
       ];
+      configFile = import ./i3config.nix { inherit config; inherit pkgs; };
     };
   };
-  windowManager.i3.configFile = import ./i3config.nix { inherit config; inherit pkgs; };
 
   fonts = {
     enableFontDir = true;
