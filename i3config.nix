@@ -7,16 +7,17 @@ let
     general {
         colors = true
         interval = 5
+        output_format = i3bar
     }
 
     #order += "ipv6"
     order += "disk /"
+    order += "memory"
+    order += "load"
     #order += "wireless _first_"
     order += "ethernet _first_"
     #order += "battery all"
-    #order += "memory"
     #order += "cpu_temperature 0"
-    order += "load"
     order += "volume master"
     order += "tztime local"
 
