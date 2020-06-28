@@ -77,8 +77,7 @@ writeText "i3-config" (
   ''
     set $mod Mod4
 
-    # Font for window titles. Will also be used by the bar unless a different font
-    # is used in the bar {} block below.
+    # Font for window title bars
     font pango:monospace 8
 
     # Use Mouse+$mod to drag floating windows to their wanted position
@@ -99,10 +98,10 @@ writeText "i3-config" (
     # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
     # change focus
-    bindsym $mod+j focus left
-    bindsym $mod+k focus down
-    bindsym $mod+l focus up
-    bindsym $mod+semicolon focus right
+    bindsym $mod+h focus left
+    bindsym $mod+j focus down
+    bindsym $mod+k focus up
+    bindsym $mod+l focus right
 
     # alternatively, you can use the cursor keys:
     bindsym $mod+Left focus left
@@ -111,10 +110,10 @@ writeText "i3-config" (
     bindsym $mod+Right focus right
 
     # move focused window
-    bindsym $mod+Shift+j move left
-    bindsym $mod+Shift+k move down
-    bindsym $mod+Shift+l move up
-    bindsym $mod+Shift+semicolon move right
+    bindsym $mod+Shift+h move left
+    bindsym $mod+Shift+j move down
+    bindsym $mod+Shift+k move up
+    bindsym $mod+Shift+l move right
 
     # alternatively, you can use the cursor keys:
     bindsym $mod+Shift+Left move left
@@ -123,10 +122,10 @@ writeText "i3-config" (
     bindsym $mod+Shift+Right move right
 
     # split in horizontal orientation
-    bindsym $mod+h split h
+    bindsym $mod+Shift+h split h
 
     # split in vertical orientation
-    bindsym $mod+v split v
+    bindsym $mod+Shift+v split v
 
     # enter fullscreen mode for the focused container
     bindsym $mod+f fullscreen toggle
@@ -187,8 +186,10 @@ writeText "i3-config" (
 
     # reload the configuration file
     bindsym $mod+Shift+c reload
+
     # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
     bindsym $mod+Shift+r restart
+    
     # exit i3 (logs you out of your X session)
     bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
