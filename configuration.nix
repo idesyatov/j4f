@@ -51,8 +51,10 @@ in {
 
   ## USERS
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.root.shell = pkgs.zsh;
   users.users.morph = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 

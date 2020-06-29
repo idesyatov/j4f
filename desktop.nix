@@ -6,8 +6,6 @@ let
 in {
   environment.pathsToLink = [ "/libexec" ];
   
-  programs.nm-applet.enable = true;
-
   # Enable the X11 windowing system with i3wm 
   services.xserver = {
     enable = true;
@@ -73,7 +71,6 @@ in {
       enable = true;
       extraPackages = with pkgs; [
         dmenu
-        networkmanagerapplet
         i3status i3lock i3blocks
       ];
       configFile = import ./i3config.nix { inherit config; inherit pkgs; };
@@ -102,6 +99,8 @@ in {
   # Enable touchpad support.
   # services.xserver.libinput.enable = true;
 
+  programs.nm-applet.enable = true;
+  
   programs.chromium = {
     enable = true;
     extensions = [
