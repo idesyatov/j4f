@@ -1,11 +1,12 @@
 { config, pkgs, libs, ...}:
 
 {
+  programs.zsh.enable = true;
   programs.zsh.interactiveShellInit = ''
     export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh/
 
     # Customize your oh-my-zsh options here
-    ZSH_THEME="bureau"
+    ZSH_THEME="gentoo"
     plugins=(git docker sudo colored-man-pages colorize)
 
     bindkey '\e[5~' history-beginning-search-backward
