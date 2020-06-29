@@ -78,7 +78,8 @@ writeText "i3-config" (
     set $mod Mod4
 
     # Font for window title bars
-    font pango:monospace 8
+    # font pango:monospace 8
+    font pango:Fira Mono 8
 
     # Use Mouse+$mod to drag floating windows to their wanted position
     floating_modifier $mod
@@ -223,6 +224,7 @@ writeText "i3-config" (
     # Start i3bar to display a workspace bar (plus the system information i3status
     # finds out, if available)
     bar {
+            font pango:Fira Mono 9
             status_command ${i3status}/bin/i3status -c ${
                 writeText "i3status-config" i3StatusBarConfig
             }
