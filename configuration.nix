@@ -15,7 +15,7 @@ in {
       ./desktop.nix
 
       ./nix/zsh.nix
-      ./nix/vim.nix
+      #./nix/vim.nix
     ];
 
   time.timeZone = "Europe/Moscow";
