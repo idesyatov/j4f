@@ -57,6 +57,15 @@ in {
     shell = pkgs.zsh;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
+  
+  # SHELL
+  programs.zsh = {
+    enable = true;
+    syntaxHighlighting = {
+      enable = true;
+      highlighters = [ "main" "brackets" "pattern" "cursor" "root" "line" ]; 
+    };
+  };
 
   ## NIXOS
   system.stateVersion = "20.03"; # Did you read the comment?
