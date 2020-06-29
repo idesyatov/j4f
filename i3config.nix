@@ -240,6 +240,10 @@ writeText "i3-config" (
     # keyboard layout
     exec_always setxkbmap -option grp:alt_shift_toggle 'us,ru'
 
+    # clipmenu
+    bindsym $mod+c exec "CM_ONESHOT=1 clipmenud"
+    bindsym $mod+v exec clipmenu
+
     # lock screen
     bindsym $mod+Control+l exec i3lock -d -c 000000
 
