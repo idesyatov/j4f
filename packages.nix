@@ -12,7 +12,7 @@ in {
     
     # Utils
     vim git htop tmux wget tldr
-    rxvt_unicode tree ranger feh
+    rxvt_unicode tree ranger file feh
         
     # bindsym $mod+c exec "CM_ONESHOT=1 clipmenud"
     # bindsym $mod+v exec clipmenu

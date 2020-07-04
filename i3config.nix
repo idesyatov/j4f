@@ -231,7 +231,11 @@ writeText "i3-config" (
     }
 
     ## GET STARTED
-
+    
+    # show me it
+    exec_always xrandr --output VGA-0 --mode 1920x1080 --rate 60
+    exec_always feh --bg-fill /etc/nixos/share/wallpaper.jpg
+    
     # powermanager
     # exec_always --no-startup-id xfce4-power-manager
 

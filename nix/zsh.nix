@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ...}:
+{ pkgs, ...}:
 
 {
   programs.zsh.enable = true;
