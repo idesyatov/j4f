@@ -67,6 +67,11 @@ in {
           URxvt.color14:            #34E2E2
           URxvt.color15:            #EEEEEC
 
+          URxvt.keysym.Control-Up:     \033[1;5A
+          URxvt.keysym.Control-Down:   \033[1;5B
+          URxvt.keysym.Control-Left:   \033[1;5D
+          URxvt.keysym.Control-Right:  \033[1;5C
+
         ''}"
     '';
 
