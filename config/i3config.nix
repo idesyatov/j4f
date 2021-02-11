@@ -234,10 +234,10 @@ writeText "i3-config" (
     
     # show me it
     exec --no-startup-id xrandr --output VGA-0 --mode 1920x1080 --rate 60
-    exec --no-startup-id --bg-fill /etc/nixos/share/wallpaper.jpg
+    exec --no-startup-id feh --bg-fill /etc/nixos/share/wallpaper.jpg
 
     # powermanager
-    # exec_always --no-startup-id xfce4-power-manager
+    exec_always --no-startup-id xfce4-power-manager
 
     # vsync video
     ## exec compton -f --vsync drm

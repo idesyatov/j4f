@@ -13,9 +13,6 @@ in {
       ./hardware-configuration.nix
       ./packages.nix
       ./desktop.nix
-
-      ./nix/zsh.nix
-      #./nix/vim.nix
     ];
 
   time.timeZone = "Europe/Moscow";
@@ -39,6 +36,9 @@ in {
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Enable NTP deamon.
+  services.ntp.enable = true;
 
   # SWAPFILE 
   swapDevices = [

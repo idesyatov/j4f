@@ -4,10 +4,6 @@
 let
   nonfree = import <nixos> { config.allowUnfree = true; };  
 in {
-  imports =
-  [ 
-    ./nix/chromium.nix
-  ];
   environment.pathsToLink = [ "/libexec" ];
   
   # Enable the X11 windowing system with i3wm 
@@ -82,7 +78,7 @@ in {
         dmenu
         i3status i3lock i3blocks
       ];
-      configFile = import ./i3config.nix { inherit config; inherit pkgs; };
+      configFile = import ./config/i3config.nix { inherit config; inherit pkgs; };
     };
   };
 
