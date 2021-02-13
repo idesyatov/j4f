@@ -17,10 +17,12 @@ in {
   environment.systemPackages = with pkgs; [
     
     # Utils
-    vim git htop tmux wget tldr
+    git htop tmux wget tldr
     rxvt_unicode tree file feh
 
-    ranger mc
+    mc 
+    ranger 
+    keepassxc
 
     # Tools 
     xfce4-screenshooter

@@ -64,6 +64,7 @@ in {
   ## NIXOS
   system.stateVersion = "20.03"; # Did you read the comment?
 
+  ## Autoclean
   nix.optimise.automatic = true;
   nix.gc = {
     automatic = true;
