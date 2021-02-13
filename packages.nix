@@ -25,8 +25,8 @@ in {
     keepassxc
 
     # Tools 
-    xfce4-screenshooter
-    xfce4-power-manager
+    xfce.xfce4-screenshooter
+    xfce.xfce4-power-manager
         
     # bindsym $mod+c exec "CM_ONESHOT=1 clipmenud"
     # bindsym $mod+v exec clipmenu

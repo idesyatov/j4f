@@ -240,8 +240,7 @@ writeText "i3-config" (
     exec_always --no-startup-id xfce4-power-manager
 
     # vsync video
-    ## exec compton -f --vsync drm
-    # exec_always compton -b
+    exec_always --no-startup-id picom -b --backend glx --vsync --xrender-sync-fence --glx-no-rebind-pixmap --use-damage --glx-no-stencil --use-ewmh-active-win --refresh-rate 24
 
     # keyboard layout
     exec_always setxkbmap -option grp:alt_shift_toggle 'us,ru'
