@@ -22,7 +22,10 @@
     nix-env -iA nixos.gitMinimal
     git clone https://github.com/idesyatov/j4f.git /mnt/etc/nixos/
 
-    nix-channel --add https://nixos.org/channels/nixos-unstable unstable
+    cd /mnt/etc/nixos
+
+    nix-channel --add https://nixos.org/channels/nixos-20.09 nixos
+    nix-channel --add https://nixos.org/channels/nixos-20.09-small nixos-small
     nix-channel --update
 
     nixos-generate-config --root /mnt
@@ -36,4 +39,6 @@ Login as `root` with the password specified during installation
 
 Set passwd for `user` from configuration.nix.
 
-    sudo nix-channel --add https://nixos.org/channels/nixos-unstable unstable
+    sudo nix-channel --add https://nixos.org/channels/nixos-20.09 nixos
+    sudo nix-channel --add https://nixos.org/channels/nixos-20.09-small nixos-small
+    sudo nix-channel --update

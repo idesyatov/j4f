@@ -1,5 +1,5 @@
-# nix-channel --add https://nixos.org/channels/nixos-20.03 nixos
-# nix-channel --add https://nixos.org/channels/nixos-unstable unstable
+# nix-channel --add https://nixos.org/channels/nixos-20.09 nixos
+# nix-channel --add https://nixos.org/channels/nixos-20.09-small nixos-small
 # nix-channel --update
 
 
@@ -62,7 +62,7 @@ in {
   };
 
   ## NIXOS
-  system.stateVersion = "20.03"; # Did you read the comment?
+  system.stateVersion = "20.09"; # Did you read the comment?
 
   ## Autoclean
   nix.optimise.automatic = true;
