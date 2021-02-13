@@ -17,6 +17,7 @@ in {
   environment.systemPackages = with pkgs; [
     
     # Utils
+    neovim
     git htop tmux wget tldr
     rxvt_unicode tree file feh
 
