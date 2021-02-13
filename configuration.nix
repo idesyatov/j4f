@@ -6,7 +6,7 @@
 { config, pkgs, ... }:
 
 let
-  unstable = import <unstable> {};
+  nixos-small = import <nixos-small> {};
 in {
   imports =
     [ # Include the results of the hardware scan.

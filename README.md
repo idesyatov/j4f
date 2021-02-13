@@ -22,8 +22,6 @@
     nix-env -iA nixos.gitMinimal
     git clone https://github.com/idesyatov/j4f.git /mnt/etc/nixos/
 
-    cd /mnt/etc/nixos
-
     nix-channel --add https://nixos.org/channels/nixos-20.09 nixos
     nix-channel --add https://nixos.org/channels/nixos-20.09-small nixos-small
     nix-channel --update
