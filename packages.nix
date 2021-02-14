@@ -74,7 +74,7 @@ in {
     # X apps
     # chromium
     (writeShellScriptBin "chromium" ''
-      ${unstable.chromium}/bin/chromium \
+      ${chromium}/bin/chromium \
       --force-dark-mode \
       --start-maximized \
       $@
