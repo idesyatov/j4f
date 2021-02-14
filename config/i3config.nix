@@ -14,11 +14,11 @@ let
     order += "disk /"
     order += "memory"
     order += "load"
+    order += "cpu_usage"
     #order += "wireless _first_"
     order += "ethernet _first_"
     #order += "battery all"
     #order += "cpu_temperature 0"
-    order += "cpu_usage"
     order += "volume master"
     order += "tztime local"
 
