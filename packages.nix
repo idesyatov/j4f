@@ -55,7 +55,7 @@ in {
         "autocmd vimenter * NERDTree
         map <C-n> :NERDTreeToggle<CR>
       '';
-    }
+    })
 
     # Utils
     git htop tmux wget tldr
