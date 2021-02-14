@@ -18,6 +18,7 @@ let
     order += "ethernet _first_"
     #order += "battery all"
     #order += "cpu_temperature 0"
+    order += "cpu_usage"
     order += "volume master"
     order += "tztime local"
 
@@ -44,6 +45,10 @@ let
             format = "%1min"
             #format = "[ load: %1min, %5min, %15min ]"
     }
+    
+    cpu_usage {
+            format = "% usage"
+    }
 
     cpu_temperature 0 {
             format = "T: %degrees °C"
@@ -69,7 +74,9 @@ let
     }
   '';
   i3BlocksBarConfig = ''
-    Hello world
+    [kbd]
+    19 interval=1
+    18 command=xset -q|grep LED| awk '{ if (substr ($10,5,1) == 1) print "RU"; else print "EN"; }'
   '';
 in
 
