@@ -16,10 +16,16 @@ in {
 
   environment.systemPackages = with pkgs; [
     
+
+
+    # VIM Config
     ((vim_configurable.override { python = python3; }).customize{
       name = "vim";
       vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-        start = [ vim-nix vim-lastplace ];
+        start = [ 
+          vim-nix 
+          vim-lastplace 
+        ];
         opt = [];
       };
       vimrcConfig.customRC = ''
@@ -39,6 +45,7 @@ in {
 
         "# Tab 4 chars, hotkeys 'c - t' ->, 'c - d' <- 
         set tabstop=4 softtabstop=-1 shiftwidth=0 expandtab
+        set backspace=indent,eol,start
 
         "# Search hightlight 
         set hlsearch
@@ -50,7 +57,6 @@ in {
         "###  Pluggin settings ###
 
         "# NerdTree
-        "autocmd vimenter * NERDTree
         map <C-n> :NERDTreeToggle<CR>
       '';
     })
