@@ -3,8 +3,6 @@
 
 let
   nonfree = import <nixos> { config.allowUnfree = true; };
-  unstable = import <unstable> {};
-  unstable-nonfree = import <unstable> { config.allowUnfree = true; };
 in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
