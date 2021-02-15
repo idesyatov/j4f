@@ -93,7 +93,7 @@ in {
         google-fonts
         go-font
         cm_unicode
-
+        font-awesome
         nonfree.corefonts
     ];
   };

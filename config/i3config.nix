@@ -4,6 +4,7 @@ with pkgs;
 
 let
   i3StatusBarConfig = ''
+    # font-awesome
     general {
         colors = true
         interval = 5
@@ -13,8 +14,8 @@ let
     #order += "ipv6"
     order += "disk /"
     order += "memory"
-    order += "load"
     order += "cpu_usage"
+    order += "load"
     #order += "wireless _first_"
     order += "ethernet _first_"
     #order += "battery all"
@@ -47,7 +48,7 @@ let
     }
     
     cpu_usage {
-            format = "%usage"
+            format = " %usage"
     }
 
     cpu_temperature 0 {
@@ -56,13 +57,13 @@ let
     }
 
     memory {
-            format = "%used"
+            format = " %used"
             threshold_degraded = "10%"
             format_degraded = "MEMORY: %free"
     }
 
     disk "/" {
-            format = "%avail"
+            format = " %avail"
     }
 
     volume master {
