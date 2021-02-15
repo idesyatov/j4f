@@ -48,7 +48,7 @@ let
     }
     
     cpu_usage {
-            format = " %usage"
+            format = "CPU %usage"
     }
 
     cpu_temperature 0 {
@@ -57,18 +57,18 @@ let
     }
 
     memory {
-            format = " %used"
+            format = "MEM %used"
             threshold_degraded = "10%"
             format_degraded = "MEMORY: %free"
     }
 
     disk "/" {
-            format = " %avail"
+            format = "ROOT %avail"
     }
 
     volume master {
-            format = "♪: %volume"
-            format_muted = "♪: muted (%volume)"
+            format = "VOL: %volume"
+            format_muted = "VOL: muted (%volume)"
             device = "default"
             mixer = "Master"
             mixer_idx = 0
