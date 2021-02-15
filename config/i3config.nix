@@ -16,10 +16,10 @@ let
     order += "memory"
     order += "cpu_usage"
     order += "load"
+    #order += "cpu_temperature 0"
     #order += "wireless _first_"
     order += "ethernet _first_"
     #order += "battery all"
-    #order += "cpu_temperature 0"
     order += "volume master"
     order += "tztime local"
 
@@ -48,7 +48,7 @@ let
     }
     
     cpu_usage {
-            format = "CPU %usage"
+            format = "CPU: %usage"
     }
 
     cpu_temperature 0 {
@@ -57,13 +57,13 @@ let
     }
 
     memory {
-            format = "MEM %used"
+            format = "MEM: %used"
             threshold_degraded = "10%"
             format_degraded = "MEMORY: %free"
     }
 
     disk "/" {
-            format = "ROOT %avail"
+            format = "ROOT: %avail"
     }
 
     volume master {
@@ -76,8 +76,8 @@ let
   '';
   i3BlocksBarConfig = ''
     [kbd]
-    19 interval=1
-    18 command=xset -q|grep LED| awk '{ if (substr ($10,5,1) == 1) print "RU"; else print "EN"; }'
+    interval=1
+    command=xset -q|grep LED| awk '{ if (substr ($10,5,1) == 1) print "RU"; else print "EN"; }'
   '';
 in
 
