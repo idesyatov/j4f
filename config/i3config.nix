@@ -4,7 +4,6 @@ with pkgs;
 
 let
   i3StatusBarConfig = ''
-    # font-awesome
     general {
         colors = true
         interval = 5
@@ -75,6 +74,10 @@ let
     }
   '';
   i3BlocksBarConfig = ''
+    command=~/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+    separator_block_width=15
+    markup=none
+
     [kbd]
     interval=1
     command=xset -q|grep LED| awk '{ if (substr ($10,5,1) == 1) print "RU"; else print "EN"; }'
