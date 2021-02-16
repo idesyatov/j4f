@@ -68,7 +68,9 @@ in {
     ranger 
     keepassxc
 
-    # Tools 
+    # Tools
+    picom 
+    xautolock
     xfce.xfce4-screenshooter
     xfce.xfce4-power-manager
         
