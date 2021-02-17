@@ -69,6 +69,9 @@ in {
     ranger 
     keepassxc
 
+    # Msg
+    tdesktop
+
     # Tools
     picom 
     xautolock
