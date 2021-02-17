@@ -134,10 +134,10 @@ writeText "i3-config" (
     bindsym $mod+Shift+Right move right
 
     # split in horizontal orientation
-    bindsym $mod+Alt+h split h
+    #bindsym $mod+x split h
 
     # split in vertical orientation
-    bindsym $mod+Alt+v split v
+    #bindsym $mod+y split v
 
     # enter fullscreen mode for the focused container
     bindsym $mod+f fullscreen toggle

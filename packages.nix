@@ -34,6 +34,7 @@ in {
         "# set number
         set relativenumber
 
+        set paste
         set wildmenu
         set smarttab
         set showmatch

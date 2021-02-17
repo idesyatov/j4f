@@ -17,6 +17,9 @@ in {
 
   time.timeZone = "Europe/Moscow";
   
+  # Sound card state
+  sound.enable = true;
+
   ## LOCALIZATION
   i18n.defaultLocale = "en_US.UTF-8";
   console = {

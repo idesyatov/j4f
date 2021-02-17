@@ -11,14 +11,9 @@ in {
     enable = true;
     layout = "us,ru";
 
-    desktopManager = {
-      xterm.enable = false;
-    };
+    desktopManager.xterm.enable = false;
 
-    displayManager = {
-      defaultSession = "none+i3";
-    };
-
+    displayManager.defaultSession = "none+i3";
     displayManager.sessionCommands =  ''
         xrdb "${pkgs.writeText  "xrdb.conf" ''
           
@@ -98,11 +93,12 @@ in {
     ];
   };
   
-  # sound.enable = true;
-  # services.blueman.enable = true; 
+  # Bluetooth applet
+  #services.blueman.enable = true; 
   
   # Enable touchpad support.
-  # services.xserver.libinput.enable = true;
+  #services.xserver.libinput.enable = true;
 
+  # Network-manager applet
   programs.nm-applet.enable = true;
 }
