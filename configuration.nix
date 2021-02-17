@@ -40,6 +40,11 @@ in {
   # Enable NTP deamon.
   services.ntp.enable = true;
 
+  # Stop job timeout.
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
+
   # SWAPFILE 
   swapDevices = [
     { device = "/var/swapfile";
