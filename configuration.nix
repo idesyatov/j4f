@@ -50,7 +50,7 @@ in {
   '';
 
   services.journald.rateLimitBurst = 1000;
-  services.journald.rateLimitInterval = 10s;
+  services.journald.rateLimitInterval = "10s";
 
   # SWAPFILE 
   swapDevices = [
