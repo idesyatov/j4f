@@ -37,6 +37,7 @@ in {
     hostName = "nixos"; # Define your hostname.
   };
 
+  #### Systemd ####
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
@@ -47,6 +48,9 @@ in {
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
   '';
+
+  services.journald.rateLimitBurst = 1000;
+  services.journald.rateLimitInterval = 10s;
 
   # SWAPFILE 
   swapDevices = [
