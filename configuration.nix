@@ -38,12 +38,6 @@ in {
   };
 
   ## Systemd ##
-  ## Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  ## Enable NTP deamon.
-  services.ntp.enable = true;
-
   ## Stop job timeout.
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
@@ -51,6 +45,10 @@ in {
 
   services.journald.rateLimitBurst = 1000;
   services.journald.rateLimitInterval = "10s";
+
+  ## Services
+  services.ntp.enable = true;
+  services.openssh.enable = true;
 
   ## SWAPFILE 
   swapDevices = [
