@@ -74,10 +74,6 @@ in {
     xautolock
     xfce.xfce4-screenshooter
     xfce.xfce4-power-manager
-        
-    # bindsym $mod+c exec "CM_ONESHOT=1 clipmenud"
-    # bindsym $mod+v exec clipmenu
-    clipmenu
 
     # X apps
     # chromium
