@@ -37,14 +37,14 @@ in {
     hostName = "nixos"; # Define your hostname.
   };
 
-  #### Systemd ####
-  # Enable the OpenSSH daemon.
+  ## Systemd ##
+  ## Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Enable NTP deamon.
+  ## Enable NTP deamon.
   services.ntp.enable = true;
 
-  # Stop job timeout.
+  ## Stop job timeout.
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
   '';
@@ -52,7 +52,7 @@ in {
   services.journald.rateLimitBurst = 1000;
   services.journald.rateLimitInterval = "10s";
 
-  # SWAPFILE 
+  ## SWAPFILE 
   swapDevices = [
     { device = "/var/swapfile";
       size = 8192; # MiB
@@ -63,6 +63,38 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.tmpOnTmpfs = true;
+
+  ## Shell params
+  programs.zsh = {
+    enable = true;
+    interactiveShellInit = ''
+      export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh/
+
+      # Customize your oh-my-zsh options here
+      ZSH_THEME="gentoo"
+      plugins=(git docker sudo colored-man-pages colorize)
+
+      bindkey '\e[5~' history-beginning-search-backward
+      bindkey '\e[6~' history-beginning-search-forward
+
+      HISTFILESIZE=10000
+      HISTSIZE=10000
+      setopt SHARE_HISTORY
+      setopt HIST_IGNORE_ALL_DUPS
+      setopt HIST_IGNORE_DUPS
+      setopt INC_APPEND_HISTORY
+      autoload -U compinit && compinit
+      unsetopt menu_complete
+      setopt completealiases
+
+      if [ -f ~/.aliases ]; then
+        source ~/.aliases
+      fi
+
+      source $ZSH/oh-my-zsh.sh
+    '';
+    promptInit = "";
+  };
 
   ## USERS
   # Define a user account. Don't forget to set a password with ‘passwd’.

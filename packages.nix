@@ -8,11 +8,10 @@ in {
   # $ nix search wget
   imports =
   [
-    ./nix/zsh.nix
     ./nix/chromium.nix
   ];
 
-  #environment.variables = { EDITOR = "vim"; };
+  environment.variables = { EDITOR = "vim"; };
 
   environment.systemPackages = with pkgs; [
     
@@ -68,7 +67,7 @@ in {
     mc 
     ranger 
     keepassxc
-
+    
     # Msg
     tdesktop
 
@@ -78,8 +77,7 @@ in {
     xfce.xfce4-screenshooter
     xfce.xfce4-power-manager
 
-    # X apps
-    # chromium
+    # chromium configure
     (writeShellScriptBin "chromium" ''
       ${chromium}/bin/chromium \
       --force-dark-mode \

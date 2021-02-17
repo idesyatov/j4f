@@ -6,7 +6,7 @@ let
 in {
   environment.pathsToLink = [ "/libexec" ];
   
-  # Enable the X11 windowing system with i3wm 
+  ## Enable the X11 windowing system with i3wm 
   services.xserver = {
     enable = true;
     layout = "us,ru";
@@ -66,7 +66,7 @@ in {
         ''}"
     '';
 
-    # i3wm settings 
+    ## i3wm settings 
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
