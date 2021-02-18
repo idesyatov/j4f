@@ -73,7 +73,7 @@ in {
         dmenu
         i3status i3lock i3blocks
       ];
-      configFile = import ./config/i3config.nix { inherit config; inherit pkgs; };
+      configFile = import ./configs/i3config.nix { inherit config; inherit pkgs; };
     };
   };
 

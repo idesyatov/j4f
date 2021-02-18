@@ -8,7 +8,7 @@ in {
   # $ nix search wget
   imports =
   [
-    ./nix/chromium.nix
+    ./progs/chromium.nix
   ];
 
   environment.variables = { EDITOR = "vim"; };
@@ -27,11 +27,13 @@ in {
         opt = [];
       };
       vimrcConfig.customRC = ''
-        "# Settings 
         syntax on
 
-        "# set number
+        set number
         set relativenumber
+
+        set hlsearch
+        set incsearch
 
         set paste
         set wildmenu
@@ -42,20 +44,13 @@ in {
         set background=dark
         colorscheme elflord 
 
-        "# Tab 4 chars, hotkeys 'c - t' ->, 'c - d' <- 
+        set clipboard=unnamedplus 
+
+        " Tab 4 chars, hotkeys 'c - t' ->, 'c - d' <- 
         set tabstop=4 softtabstop=-1 shiftwidth=0 expandtab
         set backspace=indent,eol,start
 
-        "# Search hightlight 
-        set hlsearch
-        set incsearch
-
-        "# Buffer
-        set clipboard=unnamedplus 
-
-        "###  Pluggin settings ###
-
-        "# NerdTree
+        " Exec NerdTree plugin 
         map <C-n> :NERDTreeToggle<CR>
       '';
     })
