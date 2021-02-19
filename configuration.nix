@@ -100,7 +100,11 @@ in {
   users.users.morph = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    home = "/home/morph";
+    extraGroups = [ 
+      "wheel"
+      "video" 
+    ]; # Enable ‘sudo’ for the user.
   };
 
   ## NIXOS
