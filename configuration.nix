@@ -110,10 +110,13 @@ in {
   ## NIXOS
   system.stateVersion = "20.09"; # Did you read the comment?
 
-  ## Autoclean
-  nix.optimise.automatic = true;
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 7d";
+  nix = {
+    trustedUsers = [ "root" "morph" ];
+    optimise.automatic = true;
+    ## Autoclean
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 7d";
+    };
   };
 }
