@@ -100,7 +100,6 @@ in {
   users.users.morph = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    home = "/home/morph";
     extraGroups = [ 
       "wheel"
       "video" 
@@ -111,9 +110,9 @@ in {
   system.stateVersion = "20.09"; # Did you read the comment?
 
   nix = {
-    trustedUsers = [ "root" "morph" ];
-    optimise.automatic = true;
+    trustedUsers = [ "root" ];
     ## Autoclean
+    optimise.automatic = true;
     gc = {
       automatic = true;
       options = "--delete-older-than 7d";
