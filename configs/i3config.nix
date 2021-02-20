@@ -235,10 +235,19 @@ writeText "i3-config" (
     # Start i3bar to display a workspace bar (plus the system information i3status
     # finds out, if available)
     bar {
-            font pango:Fira Mono 9
-            status_command ${i3status}/bin/i3status -c ${
+        font pango:Fira Mono 9
+        status_command ${i3status}/bin/i3status -c ${
                 writeText "i3status-config" i3StatusBarConfig
-            }
+        }
+        colors {
+                background #273240
+                statusline #C2B0AE
+                separator #C2B0AE
+                # colorclass       <border> <background> <text>
+                focused_workspace  #C2B0AE  #C2B0AE     #273240
+                inactive_workspace #273240  #273240     #C2B0AE
+        }
+
     }
 
     ## GET STARTED
