@@ -207,27 +207,27 @@ writeText "i3-config" (
 
     # resize window (you can also use the mouse for that)
     mode "resize" {
-            # These bindings trigger as soon as you enter the resize mode
+        # These bindings trigger as soon as you enter the resize mode
 
-            # Pressing left will shrink the window’s width.
-            # Pressing right will grow the window’s width.
-            # Pressing up will shrink the window’s height.
-            # Pressing down will grow the window’s height.
-            bindsym j resize shrink width 10 px or 10 ppt
-            bindsym k resize grow height 10 px or 10 ppt
-            bindsym l resize shrink height 10 px or 10 ppt
-            bindsym semicolon resize grow width 10 px or 10 ppt
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
 
-            # same bindings, but for the arrow keys
-            bindsym Left resize shrink width 10 px or 10 ppt
-            bindsym Down resize grow height 10 px or 10 ppt
-            bindsym Up resize shrink height 10 px or 10 ppt
-            bindsym Right resize grow width 10 px or 10 ppt
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
-            # back to normal: Enter or Escape or $mod+r
-            bindsym Return mode "default"
-            bindsym Escape mode "default"
-            bindsym $mod+r mode "default"
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
     }
 
     bindsym $mod+r mode "resize"
@@ -240,12 +240,12 @@ writeText "i3-config" (
                 writeText "i3status-config" i3StatusBarConfig
         }
         colors {
-                background #273240
-                statusline #C2B0AE
-                separator #C2B0AE
-                # colorclass       <border> <background> <text>
-                focused_workspace  #C2B0AE  #C2B0AE     #273240
-                inactive_workspace #273240  #273240     #C2B0AE
+            background #273240
+            statusline #C2B0AE
+            separator #C2B0AE
+            # colorclass       <border> <background> <text>
+            focused_workspace  #C2B0AE  #C2B0AE     #273240
+            inactive_workspace #273240  #273240     #C2B0AE
         }
 
     }
