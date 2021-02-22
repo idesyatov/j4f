@@ -10,6 +10,8 @@ in {
   home-manager.useUserPackages = true;
 
   home-manager.users.morph = {
-    ".xinitrc".source = ./configs/dotfiles/.xinitrc;
+    home.file = {
+      ".xinitrc".source = ./configs/dotfiles/.xinitrc;
+    };
   };
 }
