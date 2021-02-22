@@ -13,6 +13,7 @@ in {
       ./hardware-configuration.nix
       ./packages.nix
       ./desktop.nix
+      ./home-manager.nix
     ];
 
   time.timeZone = "Europe/Moscow";
