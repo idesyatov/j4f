@@ -13,6 +13,7 @@ in {
 
     desktopManager.xterm.enable = false;
 
+    #displayManager.startx.enable = true;
     displayManager.defaultSession = "none+i3";
     displayManager.sessionCommands =  ''
         xrdb "${pkgs.writeText  "xrdb.conf" ''
