@@ -5,7 +5,7 @@ let
   nonfree = import <nixos> { config.allowUnfree = true; };  
 in {
   environment.pathsToLink = [ "/libexec" ];
-  
+
   ## Enable the X11 windowing system with i3wm 
   services.xserver = {
     enable = true;

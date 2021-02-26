@@ -112,7 +112,6 @@ in {
   system.stateVersion = "20.09"; # Did you read the comment?
 
   nix = {
-    trustedUsers = [ "root" ];
     ## Autoclean
     optimise.automatic = true;
     gc = {
