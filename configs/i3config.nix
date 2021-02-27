@@ -74,7 +74,7 @@ let
     }
   '';
   i3BlocksBarConfig = ''
-    command=~/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+    command=$HOME/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
     separator_block_width=15
     markup=none
 

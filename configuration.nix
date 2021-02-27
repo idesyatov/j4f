@@ -112,6 +112,7 @@ in {
   system.stateVersion = "20.09"; # Did you read the comment?
 
   nix = {
+    trustedUsers = [ "root" "@wheel" ];
     ## Autoclean
     optimise.automatic = true;
     gc = {
