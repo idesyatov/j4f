@@ -72,7 +72,7 @@ in {
       enable = true;
       extraPackages = with pkgs; [
         dmenu
-        i3status i3blocks i3lock 
+        i3status i3lock 
       ];
       configFile = import ./configs/i3config.nix { inherit config; inherit pkgs; };
     };
