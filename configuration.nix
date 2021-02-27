@@ -103,6 +103,7 @@ in {
     shell = pkgs.zsh;
     extraGroups = [ 
       "wheel"
+      "audio"
       "video"
       "networkmanager"
     ]; # Enable ‘sudo’ for the user.
