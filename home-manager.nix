@@ -11,8 +11,12 @@ in {
 
   home-manager.users.morph = {
     home.file = {
+      ".config/i3blocks" = {
+        source = ./configs/dotfiles/.config/i3blocks;
+        recursive = true;
+      };
+
       ".xinitrc".source = ./configs/dotfiles/.xinitrc;
-      ".config/i3blocks".source = ./configs/dotfiles/.config/i3blocks;
     };
   };
 }
