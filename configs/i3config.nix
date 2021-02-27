@@ -3,6 +3,7 @@
 with pkgs;
 
 let
+  # primary bar
   i3StatusBarConfig = ''
     general {
         colors = true
@@ -73,6 +74,7 @@ let
             mixer_idx = 0
     }
   '';
+  # secondary bar (just in case)
   i3BlocksBarConfig = ''
     command=$HOME/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
     separator_block_width=15
