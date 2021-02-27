@@ -78,6 +78,94 @@ let
     separator_block_width=15
     markup=none
 
+    # Volume indicator
+    #
+    # The first parameter sets the step (and units to display)
+    # The second parameter overrides the mixer selection
+    # See the script for details.
+    [volume]
+    label=VOL
+    instance=Master
+    #instance=PCM
+    interval=once
+    #interval=1
+    signal=10
+
+    # Memory usage
+    #
+    # The type defaults to "mem" if the instance is not specified.
+    [memory]
+    label=MEM
+    separator=false
+    interval=30
+
+    [memory]
+    label=SWAP
+    instance=swap
+    separator=false
+    interval=30
+
+    # Disk usage
+    #
+    # The directory defaults to $HOME if the instance is not specified.
+    # The script may be called with a optional argument to set the alert
+    # (defaults to 10 for 10%).
+    [disk]
+    label=ROOT
+    #instance=/mnt/data
+    interval=30
+
+    # Network interface monitoring
+    #
+    # If the instance is not specified, use the interface used for default route.
+    # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+    [iface]
+    #instance=wlan0
+    color=#00FF00
+    interval=10
+    separator=false
+
+    [wifi]
+    #instance=wlp3s0
+    interval=10
+    separator=false
+
+    [bandwidth]
+    #instance=eth0
+    interval=5
+
+    # CPU usage
+    #
+    # The script may be called with -w and -c switches to specify thresholds,
+    # see the script for details.
+    [cpu_usage]
+    label= CPU
+    interval=10
+    min_width=CPU: 100.00%
+    #separator=false
+
+    [load_average]
+    interval=10
+
+    # Battery indicator
+    #
+    # The battery instance defaults to 0.
+    [battery]
+    #label=BAT
+    label=⚡
+    #instance=1
+    interval=30
+
+    [temperature]
+    label=TEMP
+    interval=10
+
+    # Date Time
+    #
+    [time]
+    command=date '+%Y-%m-%d %H:%M:%S'
+    interval=5
+
     [kbd]
     interval=1
     command=xset -q|grep LED| awk '{ if (substr ($10,5,1) == 1) print "RU"; else print "EN"; }'

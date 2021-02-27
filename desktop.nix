@@ -72,7 +72,7 @@ in {
       enable = true;
       extraPackages = with pkgs; [
         dmenu
-        i3status i3lock
+        i3status i3blocks i3lock 
       ];
       configFile = import ./configs/i3config.nix { inherit config; inherit pkgs; };
     };
@@ -86,6 +86,7 @@ in {
         noto-fonts
         noto-fonts-extra
         noto-fonts-emoji
+        font-awesome
 
         nonfree.corefonts
     ];
