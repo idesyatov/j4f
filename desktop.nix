@@ -17,6 +17,15 @@ in {
   ## Enable the X11 windowing system with i3wm 
   services.xserver = {
     enable = true;
+    autorun = false; # Important!
+    exportConfiguration = true; # Important
+
+    resolutions = [
+      { x = 1280; y = 720; }
+      { x = 1920; y = 1080; }
+      { x = 2560; y = 1440; }
+    ];
+
     layout = "us,ru";
 
     desktopManager.xterm.enable = false;
