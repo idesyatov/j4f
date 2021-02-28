@@ -6,6 +6,14 @@ let
 in {
   environment.pathsToLink = [ "/libexec" ];
 
+  environment.etc."X11/Xwrapper.config" = {
+    text = ''
+      allowed_users=anybody
+      needs_root_rights=yes
+
+    '';
+  };
+
   ## Enable the X11 windowing system with i3wm 
   services.xserver = {
     enable = true;
