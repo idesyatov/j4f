@@ -67,8 +67,9 @@ in {
     tdesktop
 
     # Tools
-    picom 
+    picom
     xautolock
+    libnotify
     xfce.xfce4-screenshooter
     xfce.xfce4-power-manager
 
