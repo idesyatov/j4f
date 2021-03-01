@@ -105,8 +105,6 @@ in {
       "wheel"
       "audio"
       "video"
-      "tty"
-      "input"
       "networkmanager"
     ]; # Enable ‘sudo’ for the user.
   };
