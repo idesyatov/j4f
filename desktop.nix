@@ -6,19 +6,9 @@ let
 in {
   environment.pathsToLink = [ "/libexec" ];
 
-  environment.etc."X11/Xwrapper.config" = {
-    text = ''
-      allowed_users=anybody
-      needs_root_rights=yes
-
-    '';
-  };
-
   ## Enable the X11 windowing system with i3wm 
   services.xserver = {
     enable = true;
-    autorun = false; # Important!
-    exportConfiguration = true; # Important
 
     resolutions = [
       { x = 1280; y = 720; }
@@ -30,7 +20,26 @@ in {
 
     desktopManager.xterm.enable = false;
 
-    #displayManager.startx.enable = true;
+    displayManager.lightdm = {
+      enable = true;
+      background = pkgs.nixos-artwork.wallpapers.dracula.gnomeFilePath;
+      greeters = {
+        gtk = {
+          enable = true;
+          clock-format = "%a %d/%m %H:%M:%S";
+          iconTheme = {
+            package = pkgs.arc-icon-theme;
+            name = "Arc";
+          };
+          indicators = [ "~clock" "~session" "~power" ];
+          theme = {
+            package = pkgs.arc-theme;
+            name = "Arc-Dark";
+          };
+        };
+      };
+    };
+
     displayManager.defaultSession = "none+i3";
     displayManager.sessionCommands =  ''
         xrdb "${pkgs.writeText  "xrdb.conf" ''
