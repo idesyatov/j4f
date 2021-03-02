@@ -9,6 +9,10 @@ in {
 
   home-manager.useUserPackages = true;
 
+  home-manager.users.root = {
+    home.file.".xinitrc".source = ./home/dotfiles/.xinitrc;
+  };
+
   home-manager.users.morph = {
     home.file = {
 
@@ -16,8 +20,6 @@ in {
         source = ./home/Dev;
         recursive = true;
       };
-
-      ".xinitrc".source = ./home/dotfiles/.xinitrc;
     };
   };
 }
