@@ -12,14 +12,12 @@ in {
   home-manager.users.morph = {
     home.file = {
 
-      ".config/i3blocks".source = pkgs.fetchFromGitHub {
-        owner = "vivien";
-        repo = "i3blocks-contrib";
-        rev = "19ef961";
-        sha256 = "1mwgznscxl10r5p9355yb8zixkkc7vxr3r337zmyia8ssvzvrba5";
+      "Dev" = {
+        source = ./home/Dev;
+        recursive = true;
       };
 
-      ".xinitrc".source = ./configs/dotfiles/.xinitrc;
+      ".xinitrc".source = ./home/dotfiles/.xinitrc;
     };
   };
 }
