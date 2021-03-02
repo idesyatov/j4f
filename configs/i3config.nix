@@ -24,54 +24,54 @@ let
     order += "tztime local"
 
     wireless _first_ {
-            format_up = "W: (%quality at %essid) %ip"
-            format_down = "W: down"
+        format_up = "W: (%quality at %essid) %ip"
+        format_down = "W: down"
     }
 
     ethernet _first_ {
-            # if you use %speed, i3status requires root privileges
-            format_up = "E: %ip (%speed)"
-            format_down = "E: down"
+        # if you use %speed, i3status requires root privileges
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
     }
 
     battery all {
-            format = "%status %percentage %remaining"
+        format = "%status %percentage %remaining"
     }
 
     tztime local {
-            format = "%Y-%m-%d %H:%M:%S"
+        format = "%Y-%m-%d %H:%M:%S"
     }
 
     load {
-            format = "%1min"
-            #format = "[ load: %1min, %5min, %15min ]"
+        format = "%1min"
+        #format = "[ load: %1min, %5min, %15min ]"
     }
     
     cpu_usage {
-            format = "CPU: %usage"
+        format = "CPU: %usage"
     }
 
     cpu_temperature 0 {
-            format = "T: %degrees °C"
-            path = "/sys/devices/platform/coretemp.0/temp1_input"
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
     }
 
     memory {
-            format = "MEM: %used"
-            threshold_degraded = "10%"
-            format_degraded = "MEMORY: %free"
+        format = "MEM: %used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
     }
 
     disk "/" {
-            format = "ROOT: %avail"
+        format = "ROOT: %avail"
     }
 
     volume master {
-            format = "VOL: %volume"
-            format_muted = "VOL: muted (%volume)"
-            device = "default"
-            mixer = "Master"
-            mixer_idx = 0
+        format = "VOL: %volume"
+        format_muted = "VOL: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
     }
   '';
   # secondary bar (just in case)
@@ -174,7 +174,7 @@ let
   '';
 in
 
-writeText "i3-config" (
+pkgs.writeText "i3-config" (
   ''
     set $mod Mod4
 
@@ -327,12 +327,12 @@ writeText "i3-config" (
     bar {
         font pango:Fira Mono 9
         status_command ${i3status}/bin/i3status -c ${
-                writeText "i3status-config" i3StatusBarConfig
+                pkgs.writeText "i3status-config" i3StatusBarConfig
         }
         colors {
             background #273240
             statusline #C2B0AE
-            separator #C2B0AE
+            separator  #C2B0AE
             # colorclass       <border> <background> <text>
             focused_workspace  #C2B0AE  #C2B0AE     #273240
             inactive_workspace #273240  #273240     #C2B0AE
