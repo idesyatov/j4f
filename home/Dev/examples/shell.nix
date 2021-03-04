@@ -5,6 +5,7 @@ runCommand "dummy" {
   # The packages we want in our environment
   buildInputs = [
     go
+    nodejs
     python3
     pkgconfig
   ];
